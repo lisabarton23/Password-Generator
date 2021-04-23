@@ -22,9 +22,7 @@ var lengthArray=[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29
 var specialChar =["!","@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "=", "~", ":", ";", "?", "/", "<", ">",]
 
 function generatePassword(){
-  //display questions
   
-    //userLength might be type string | parseInt()
   userLength = prompt("Please enter a length with a minimum 8 and a maxium of 128 characters.");
   
   isLower=confirm("Do you want lower case?");
@@ -41,28 +39,30 @@ function generatePassword(){
     if (isSpecial ===yes) then (userArray = upperArray.concat (specialChar));
     if (isNumber ===yes) then (userArray =upperArray.concat (numberArray));
   
-  
+   return userArray + userLength;
   } 
-  console.log (userArray)
+  
 
     
-for(var i=0;i<userLength;i++) { secWord = secWord.contcat(writePassword(userArray));
- 
+for(var i=0;i<userLength;i++) { secWord += userArray(randomIndex)
 
 
 
  return secWord;}
 }
+function writePassword (userArray) { return userArray[Math.floor(math.random() * userArray.length)];
+}
 
-// Write password to the #password input
+
+//  Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+ var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  
 
-}//console.log(secWord);
-
+ }
 
 
 // Add event listener to generate button
